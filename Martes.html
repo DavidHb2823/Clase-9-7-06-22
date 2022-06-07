@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="widt=device-width, initial-scale=1">
+<link rel="stylesheet" href="martes.css">
+<title>Objetos json</title>
+</head>
+<body>
+<h1>Otra manera de trabajar con json</h1>
+<div id="target"></div>
+<script>
+	let data={
+		"response":{
+			"docs":[
+			{"id":"1",
+			"nombre": "starlord",
+			"real": "Scott Summers",
+			"poderes": "rayos Opticos",
+			"imagen":"starlord.jpg"}
+			
+		
+		]
+	}};
+let target=document.querySelector('#target');
+data=data.response.docs;
+data.forEach((value, key)=>{
+	target.innerHTML+=´<div class="image-list">
+<img src="$(value.imagen)" class="image-styles" />
+<p class="image-nombre">${value.nombre}</p>
+<p class="image-real">${value.real}</p>
+<p class="image-real">${value.poderes}</p>
+
+</div>
+</script>
+</body>
+</html>
